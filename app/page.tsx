@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { toast } from "react-hot-toast";
 import { Share2, Flame, Loader2 } from "lucide-react";
-import { HOSTELS, DEPTS, OFF_CAMPUS } from "@/lib/constants";
+import { HOSTELS, DEPARTMENTS } from "@/lib/constants";
 
 const RoastDisplay = ({ text }: { text: string }) => {
   const [displayedText, setDisplayedText] = useState("");
@@ -16,19 +16,36 @@ const RoastDisplay = ({ text }: { text: string }) => {
       setDisplayedText(text.slice(0, i));
       i++;
       if (i > text.length) clearInterval(interval);
-    }, 20);
+    }, 25);
     return () => clearInterval(interval);
   }, [text]);
 
   return (
-    <div className="bg-white/5 border-l-2 border-accent-orange p-6 my-6 font-mono text-sm sm:text-base leading-relaxed text-white/80 rounded-r-2xl">
-      {displayedText}
-      <motion.span
-        animate={{ opacity: [1, 0] }}
-        transition={{ repeat: Infinity, duration: 0.8 }}
-        className="inline-block w-2 h-5 bg-accent-orange ml-1 align-middle"
+    <motion.div 
+      initial={{ opacity: 0, y: 10, filter: "blur(10px)" }}
+      animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+      className="relative bg-white/5 border-l-4 border-accent-orange p-8 my-8 font-mono text-base sm:text-lg leading-relaxed text-white rounded-r-2xl overflow-hidden"
+    >
+      {/* Background Glow */}
+      <div className="absolute top-0 right-0 w-32 h-32 bg-accent-orange/10 blur-[50px] rounded-full -mr-16 -mt-16 pointer-events-none" />
+      
+      <div className="relative z-10">
+        <span className="text-accent-orange mr-2">{"//"}</span>
+        {displayedText}
+        <motion.span
+          animate={{ opacity: [1, 0] }}
+          transition={{ repeat: Infinity, duration: 0.8 }}
+          className="inline-block w-2.5 h-6 bg-accent-orange ml-1 align-middle"
+        />
+      </div>
+
+      <motion.div
+        initial={{ scaleX: 0 }}
+        animate={{ scaleX: 1 }}
+        transition={{ duration: 1.5, ease: "easeOut" }}
+        className="absolute bottom-0 left-0 h-[2px] w-full bg-gradient-to-r from-accent-orange to-transparent origin-left"
       />
-    </div>
+    </motion.div>
   );
 };
 
@@ -110,7 +127,7 @@ export default function BurnOAU() {
                 className="sleek-input"
               >
                 <option value="" className="bg-[#121214]">Select Dept</option>
-                {DEPTS.sort().map((d) => (
+                {[...DEPARTMENTS].sort().map((d) => (
                   <option key={d} value={d} className="bg-[#121214]">{d}</option>
                 ))}
               </select>
@@ -124,14 +141,9 @@ export default function BurnOAU() {
                 className="sleek-input"
               >
                 <option value="" className="bg-[#121214]">Select Location</option>
-                <optgroup label="On-Campus Hostels" className="bg-[#121214]">
+                <optgroup label="Locations & Hostels" className="bg-[#121214]">
                   {HOSTELS.map((h) => (
                     <option key={h} value={h} className="bg-[#121214]">{h}</option>
-                  ))}
-                </optgroup>
-                <optgroup label="Off-Campus Areas" className="bg-[#121214]">
-                  {OFF_CAMPUS.map((loc) => (
-                    <option key={loc} value={loc} className="bg-[#121214]">{loc}</option>
                   ))}
                 </optgroup>
               </select>

@@ -1,78 +1,73 @@
-export const HOSTELS = [
-  "Awolowo Hall (Awo)",
-  "Moremi Hall",
-  "Postgraduate Hall",
-  "Fajuyi Hall (Faj)",
-  "Mozambique Hall (Moz)",
-  "Gloryland (Clinical)",
-  "Angola Hall",
-  "Akintola Hall",
-  "Alumni Hall",
-  "ETF Hall",
-];
-
-export const OFF_CAMPUS = [
-  "Gate / Main Gate",
-  "Oduduwa Estate",
-  "Lagere",
-  "Mayfair",
-  "Ede Road",
-  "Parakin",
-  "Asherifa",
-  "Hezekiah Road",
-  "Iyana-Ife",
-];
-
-export const DEPTS = [
-  // Technology
-  "Computer Science & Engineering",
-  "Electronic & Electrical Engineering (EEE)",
-  "Mechanical Engineering",
-  "Civil Engineering",
-  "Chemical Engineering",
-  "Materials Science & Engineering",
-  "Food Science & Technology",
-  "Agricultural Engineering",
-
-  // Administration
-  "Management & Accounting",
-  "Business Administration",
-  "International Relations",
-  "Public Administration",
-  "Local Government Studies",
-
-  // Arts
-  "Dramatic Arts",
-  "English / Literature-in-English",
-  "Linguistics & African Languages",
-  "History",
-  "Philosophy",
+export const DEPARTMENTS = [
+  // Faculty of Computing & Tech
+  "Software Engineering", 
+  "Computer Science", 
+  "Cybersecurity", 
+  "Information Systems", 
+  "Data Science",
+  "Computer Science with Economics",
+  "EEE (Electronic & Electrical)", 
+  "Mechanical Engineering", 
+  "Civil Engineering", 
+  "Chemical Engineering", 
+  "Food Science", 
+  "Agricultural Engineering", 
+  "Materials Science",
+  
+  // Faculty of Administration
+  "Management & Accounting", 
+  "International Relations", 
+  "Public Admin", 
+  "Local Government",
+  
+  // Faculty of Arts & Social Sciences
+  "Economics", 
+  "Political Science", 
+  "Sociology", 
+  "Psychology", 
+  "Geography", 
+  "Mass Communication", 
+  "Broadcasting", 
+  "Journalism and Media Studies", 
+  "Public Relations and Advertising",
+  "Dramatic Arts", 
+  "English", 
+  "History", 
+  "Philosophy", 
+  "Linguistics", 
   "Music",
-  "Religious Studies",
-  "Foreign Languages (French/German/Portuguese)",
-
-  // Social Sciences
-  "Economics",
-  "Political Science",
-  "Sociology & Anthropology",
-  "Psychology",
-  "Geography",
-  "Mass Communication",
-
-  // Science
-  "Microbiology",
-  "Biochemistry",
-  "Mathematics / Statistics",
-  "Physics / Geology",
-  "Zoology / Botany",
-  "Chemistry / Industrial Chemistry",
-
-  // Professional/Medical
-  "Medicine & Surgery (MBBS)",
-  "Nursing Science",
-  "Pharmacy",
-  "Medical Rehabilitation (Physio)",
+  
+  // Faculty of Science
+  "Microbiology", 
+  "Biochemistry", 
+  "Industrial Chemistry", 
+  "Geology", 
+  "Physics", 
+  "Mathematics",
+  
+  // Medical & Law
+  "Medicine & Surgery", 
+  "Nursing Science", 
+  "Pharmacy", 
+  "Medical Rehab (Physio)", 
+  "Dentistry", 
+  "Medical Laboratory Science", 
   "Law",
-  "Dentistry",
-  "Architecture / Building / Estate Management (EDM)",
+  
+  // EDM (Environmental Design & Management)
+  "Architecture", 
+  "Estate Management", 
+  "Quantity Surveying", 
+  "Surveying and Geoinformatics",
+  "Urban & Regional Planning", 
+  "Building"
+];
+
+export const HOSTELS = [
+  "Awolowo Hall", "Fajuyi Hall", "Angola Hall", "ETF Hall", 
+  "Moremi Hall", "Mozambique Hall", "Akintola Hall", "Alumni Hall", 
+  "Postgraduate Hall", "Health Center / Gloryland",
+  "Off-Campus (Gate / Maintenance)", "Off-Campus (Lagere / Mayfair)", 
+  "Off-Campus (Ede Road / Asherifa)", "Off-Campus (Oduduwa Estate / Parakin)",
+  "Eleweran", "Agbunla", "Ibadan Road", "Moremi Estate", "Fasina"
 ];
