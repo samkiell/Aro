@@ -1,4 +1,4 @@
-# PRD: BurnOAU - The AI Aro Bot
+# PRD: Aro - The AI Aro Bot
 
 ## Overview
 A single-page web app that generates "Aro" (Nigerian campus-style roasts) for OAU students based on their Department and Residential Hostel. 

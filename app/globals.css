@@ -3,37 +3,40 @@
 :root {
   --background: #050505;
   --foreground: #ffffff;
-  --ife-blue: #003366;
-  --warning-orange: #FF8C00;
+  --card-bg: rgba(18, 18, 20, 0.8);
+  --accent-orange: #FF8C00;
+  --accent-blue: #0044CC;
 }
 
 @theme {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --color-ife-blue: var(--ife-blue);
-  --color-warning-orange: var(--warning-orange);
+  --color-accent-orange: var(--accent-orange);
+  --color-accent-blue: var(--accent-blue);
   
-  --shadow-brutal: 4px 4px 0px 0px rgba(255, 140, 0, 0.3);
-  --shadow-brutal-hover: 8px 8px 0px 0px rgba(255, 140, 0, 0.5);
-  
-  --radius-brutal: 0px;
+  --shadow-glow: 0 0 20px rgba(255, 140, 0, 0.15);
+  --shadow-glow-strong: 0 0 40px rgba(255, 140, 0, 0.25);
 }
 
 @layer base {
   body {
-    @apply bg-background text-foreground selection:bg-warning-orange selection:text-ife-blue;
-    font-family: 'Inter', system-ui, sans-serif;
+    @apply bg-background text-foreground selection:bg-accent-orange/30;
+    font-family: var(--font-outfit), system-ui, sans-serif;
   }
 }
 
-.brutal-card {
-  @apply border-4 border-ife-blue bg-background p-6 shadow-brutal transition-all hover:-translate-x-1 hover:-translate-y-1 hover:shadow-brutal-hover;
+.sleek-card {
+  @apply bg-card-bg backdrop-blur-xl border border-white/5 rounded-3xl p-8 shadow-glow transition-all duration-500 hover:border-white/10 hover:shadow-glow-strong;
 }
 
-.brutal-btn {
-  @apply bg-warning-orange text-ife-blue font-black uppercase px-6 py-3 border-4 border-ife-blue shadow-brutal active:translate-x-1 active:translate-y-1 active:shadow-none hover:-translate-x-1 hover:-translate-y-1 transition-all;
+.sleek-btn {
+  @apply relative overflow-hidden bg-accent-orange text-background font-bold px-8 py-4 rounded-2xl transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_0_20px_rgba(255,140,0,0.4)] active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed;
 }
 
-.brutal-input {
-  @apply bg-transparent border-4 border-ife-blue p-3 text-foreground focus:outline-none focus:border-warning-orange transition-colors;
+.sleek-input {
+  @apply bg-white/5 border border-white/10 rounded-2xl p-4 text-foreground focus:outline-none focus:ring-2 focus:ring-accent-orange/50 focus:bg-white/10 transition-all;
+}
+
+.glow-text {
+  @apply text-transparent bg-clip-text bg-gradient-to-r from-accent-orange to-orange-400;
 }
