@@ -1,26 +1,39 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #050505;
+  --foreground: #ffffff;
+  --ife-blue: #003366;
+  --warning-orange: #FF8C00;
 }
 
-@theme inline {
+@theme {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-ife-blue: var(--ife-blue);
+  --color-warning-orange: var(--warning-orange);
+  
+  --shadow-brutal: 4px 4px 0px 0px rgba(255, 140, 0, 0.3);
+  --shadow-brutal-hover: 8px 8px 0px 0px rgba(255, 140, 0, 0.5);
+  
+  --radius-brutal: 0px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  body {
+    @apply bg-background text-foreground selection:bg-warning-orange selection:text-ife-blue;
+    font-family: 'Inter', system-ui, sans-serif;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+.brutal-card {
+  @apply border-4 border-ife-blue bg-background p-6 shadow-brutal transition-all hover:-translate-x-1 hover:-translate-y-1 hover:shadow-brutal-hover;
+}
+
+.brutal-btn {
+  @apply bg-warning-orange text-ife-blue font-black uppercase px-6 py-3 border-4 border-ife-blue shadow-brutal active:translate-x-1 active:translate-y-1 active:shadow-none hover:-translate-x-1 hover:-translate-y-1 transition-all;
+}
+
+.brutal-input {
+  @apply bg-transparent border-4 border-ife-blue p-3 text-foreground focus:outline-none focus:border-warning-orange transition-colors;
 }
