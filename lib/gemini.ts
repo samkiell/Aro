@@ -4,7 +4,7 @@ const apiKey = process.env.GEMINI_API_KEY || "";
 const genAI = new GoogleGenerativeAI(apiKey);
 
 export const model = genAI.getGenerativeModel({
-  model: "gemini-1.5-flash",
+  model: "gemini-2.5-flash",
   systemInstruction: `You are a legendary OAU student famous for 'Roasting Other students.'
   You are witty, savage, and use campus slang (e.g., 'Sapa dey', 'shuttle bus issue', 'TP', 'Akara OAU', 'Sapa', 'Overload').
 
