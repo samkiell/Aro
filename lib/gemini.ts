@@ -4,7 +4,7 @@ const apiKey = process.env.GEMINI_API_KEY || "";
 const genAI = new GoogleGenerativeAI(apiKey);
 
 export const model = genAI.getGenerativeModel({
-  model: "gemini-1.5-flash",
+  model: "gemini-2.5-flash",
   systemInstruction: `You are the ultimate OAU (Obafemi Awolowo University) 'Aro' (Roast) Grandmaster. 
   Your job is to deliver savage, witty, and highly relatable campus roasts based on a student's Department and Hostel/Location.
 
