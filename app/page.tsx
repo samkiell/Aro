@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { toast } from "react-hot-toast";
 import { Share2, Flame, Loader2 } from "lucide-react";
-import { HOSTELS, DEPTS } from "@/lib/constants";
+import { HOSTELS, DEPTS, OFF_CAMPUS } from "@/lib/constants";
 
 const RoastDisplay = ({ text }: { text: string }) => {
   const [displayedText, setDisplayedText] = useState("");
@@ -117,16 +117,23 @@ export default function BurnOAU() {
             </div>
 
             <div className="flex flex-col gap-3">
-              <label className="text-[10px] font-bold uppercase tracking-widest text-white/30 ml-1">Residential Hostel</label>
+              <label className="text-[10px] font-bold uppercase tracking-widest text-white/30 ml-1">Location / Hostel</label>
               <select
                 value={hostel}
                 onChange={(e) => setHostel(e.target.value)}
                 className="sleek-input"
               >
-                <option value="" className="bg-[#121214]">Select Hostel</option>
-                {HOSTELS.map((h) => (
-                  <option key={h} value={h} className="bg-[#121214]">{h}</option>
-                ))}
+                <option value="" className="bg-[#121214]">Select Location</option>
+                <optgroup label="On-Campus Hostels" className="bg-[#121214]">
+                  {HOSTELS.map((h) => (
+                    <option key={h} value={h} className="bg-[#121214]">{h}</option>
+                  ))}
+                </optgroup>
+                <optgroup label="Off-Campus Areas" className="bg-[#121214]">
+                  {OFF_CAMPUS.map((loc) => (
+                    <option key={loc} value={loc} className="bg-[#121214]">{loc}</option>
+                  ))}
+                </optgroup>
               </select>
             </div>
           </div>

@@ -12,7 +12,11 @@ export async function POST(req: Request) {
       );
     }
 
-    const prompt = `Roast this OAU student: Department of ${dept}, living in ${hostel} Hall.`;
+    const prompt = `Roast this OAU student.
+    Department: ${dept}
+    Location/Hostel: ${hostel}
+    
+    Instruction: Generate a savage roast based on these specific student details.`;
     
     const result = await model.generateContent(prompt);
     const response = await result.response;
