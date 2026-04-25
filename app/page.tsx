@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { toast } from "react-hot-toast";
-import { Share2, Flame, Loader2 } from "lucide-react";
+import { Share2, Flame, Loader2, ExternalLink } from "lucide-react";
 import { HOSTELS, DEPARTMENTS } from "@/lib/constants";
 
 const RoastDisplay = ({ text }: { text: string }) => {
@@ -104,6 +104,13 @@ export default function BurnOAU() {
         className="relative z-10 w-full max-w-2xl sleek-card"
       >
         <div className="text-center mb-10">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            className="inline-block px-3 py-1 mb-4 rounded-full bg-accent-orange/10 border border-accent-orange/20"
+          >
+            <span className="text-[10px] font-bold text-accent-orange uppercase tracking-widest">Build with AI OAU 2026</span>
+          </motion.div>
           <motion.h1 
             initial={{ y: -20 }}
             animate={{ y: 0 }}
@@ -202,10 +209,28 @@ export default function BurnOAU() {
           </AnimatePresence>
         </div>
 
-        <div className="mt-12 text-center">
+        <div className="mt-12 text-center flex flex-col items-center gap-6">
+          <motion.a 
+            href="https://bwaioau.site/" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.5 }}
+            className="group flex items-center gap-3 px-6 py-3 bg-white/[0.03] border border-white/5 rounded-full transition-all hover:bg-white/10 hover:border-white/10 hover:shadow-glow"
+          >
+            <div className="w-2 h-2 rounded-full bg-accent-orange animate-pulse shadow-[0_0_8px_rgba(255,140,0,0.8)]" />
+            <span className="text-[10px] uppercase font-bold text-white/30 tracking-[0.2em] group-hover:text-white/60 transition-colors">
+              Built for Build with AI OAU 2026
+            </span>
+            <ExternalLink size={12} className="text-white/20 group-hover:text-white/40 transition-colors" />
+          </motion.a>
+
+          <div className="space-y-1">
             <p className="text-[10px] uppercase font-bold text-white/10 tracking-[0.4em]">
                 Great Ife • Maximum Shi-Shi
             </p>
+          </div>
         </div>
       </motion.div>
     </main>

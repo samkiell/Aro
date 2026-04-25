@@ -8,8 +8,8 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  title: "Aro - The OAU Roast Bot",
-  description: "Get roasted by the legendary OAU 'Aro' veteran.",
+  title: "Aro - The OAU Roast Bot | Build with AI OAU",
+  description: "Get roasted by the legendary OAU 'Aro' veteran. Built for Build with AI OAU 2026.",
 };
 
 import { Toaster } from "react-hot-toast";
