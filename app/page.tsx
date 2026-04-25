@@ -228,7 +228,7 @@ export default function BurnOAU() {
 
           <div className="space-y-1">
             <p className="text-[10px] uppercase font-bold text-white/10 tracking-[0.4em]">
-                Great Ife • Maximum Shi-Shi
+                • Great Ife •
             </p>
           </div>
         </div>
